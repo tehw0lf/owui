@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, Button, Text, TextInput, View} from 'react-native';
+import {Button, Text, TextInput, View} from 'react-native';
 import Config from 'react-native-config';
 import * as Keychain from 'react-native-keychain';
 import {WebView} from 'react-native-webview';
@@ -19,7 +19,6 @@ const loadCredentials = async () => {
 };
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
   const [username] = useState(undefined);
   const [password] = useState(undefined);
   const [webViewVisible, setWebViewVisible] = useState(false);
@@ -45,13 +44,10 @@ const App = () => {
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      {loading ? (
-        <ActivityIndicator size="large" />
-      ) : webViewVisible ? (
+      {webViewVisible ? (
         <WebView
           source={{uri: hostname}}
           injectedJavaScript={injectedJavaScript}
-          onLoad={() => setLoading(false)}
         />
       ) : (
         <View>
