@@ -22,4 +22,3 @@ jobs:
       app_root: '.'
     secrets:
       ANDROID_STOREPASS: ${{ secrets.ANDROID_STOREPASS }}
-      REACT_APP_HOSTNAME: ${{ secrets.REACT_APP_HOSTNAME }}
