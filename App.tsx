@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Text, TextInput, View} from 'react-native';
-import Config from 'react-native-config';
 import * as Keychain from 'react-native-keychain';
 import {WebView} from 'react-native-webview';
 
-const hostname = Config.REACT_APP_HOSTNAME || '';
+const hostname = 'http:192.168.42.20:3000/';
 
 const saveCredentials = async (username: string, password: string) => {
   await Keychain.setGenericPassword(username, password);
@@ -52,8 +51,8 @@ const App = () => {
       ) : (
         <View>
           <Text>Open Web UI Autologin for {hostname}</Text>
-          {!username && <TextInput value={username}>E-Mail</TextInput>}
-          {!password && <TextInput value={password}>Password</TextInput>}
+          {!username && <TextInput placeholder="E-Mail" value={username} />}
+          {!password && <TextInput placeholder="Password" value={password} />}
           <Button title="Login" onPress={handleLogin} />
         </View>
       )}
