@@ -3,15 +3,15 @@ import {WebView} from 'react-native-webview';
 
 const App = () => {
   const injectedJavaScript = `
-    document.getElementsByName('email')[0].value = "tehwolf@local.local";
-    document.getElementsByName('current-password')[0].value = "LW#PJ{so9(Vwq]S%x*tbR?352+w+ pT#&Es4(\`27., 4W/~#FKg2t@:@JX^cq2pX";
+    document.getElementsByName('email')[0].value = "lars@local.local";
+    document.getElementsByName('current-password')[0].value = "oL9PCJ;&,$w=s>+\\srD[ W37tc$3X<zKZ?M4/2MC3o;|d7mg>-i%K%X?j(e'=5Df";
     document.getElementsByTagName('form')[0].submit();
   `;
 
   return (
     <WebView
       source={{uri: 'http:192.168.42.20:3000/'}}
-      injectedJavaScript={injectedJavaScript}
+      onLoad={() => injectedJavaScript}
     />
   );
 };
