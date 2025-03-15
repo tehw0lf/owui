@@ -10,8 +10,11 @@ const App = () => {
 
   return (
     <WebView
-      source={{uri: 'http:192.168.42.20:3000/'}}
-      onLoad={() => injectedJavaScript}
+      source={{uri: 'http:192.168.42.20:3000/auth'}}
+      javaScriptCanOpenWindowsAutomatically={true}
+      javaScriptEnabled={true}
+      originWhitelist={['*']}
+      injectedJavaScript={injectedJavaScript}
     />
   );
 };
