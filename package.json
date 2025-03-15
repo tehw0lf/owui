@@ -12,7 +12,6 @@
   "dependencies": {
     "react": "19.0.0",
     "react-native": "0.78.0",
-    "react-native-keychain": "^9.2.3",
     "react-native-webview": "^13.13.4"
   },
   "devDependencies": {
