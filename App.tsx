@@ -13,7 +13,7 @@ const App = () => {
   return (
     <View>
       <WebView
-        source={{uri: 'http:192.168.42.20:3000/auth'}}
+        source={{uri: 'http://192.168.42.20:3000/'}}
         originWhitelist={['*']}
         injectedJavaScript={injectedJavaScript}
       />
