@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 import {WebView} from 'react-native-webview';
 
 const App = () => {
@@ -11,13 +10,11 @@ const App = () => {
     }, 500);
   `;
   return (
-    <View>
-      <WebView
-        source={{uri: 'http:192.168.42.20:3000/'}}
-        originWhitelist={['*']}
-        injectedJavaScript={injectedJavaScript}
-      />
-    </View>
+    <WebView
+      source={{uri: 'http:192.168.42.20:3000/'}}
+      originWhitelist={['*']}
+      injectedJavaScript={injectedJavaScript}
+    />
   );
 };
 
